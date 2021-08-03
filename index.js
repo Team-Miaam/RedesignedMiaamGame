@@ -1,9 +1,10 @@
-import { Game } from 'miaam';
+import { GameManager } from 'miaam';
 
-import mainScene from './scenes/main.js';
-import labScene from './scenes/lab.js';
+import MainScene from './scenes/main.js';
 
-const game = new Game({
+const game = GameManager.getInstance();
+
+game.createView({
 	width: 512,
 	height: 512,
 	antialias: true,
@@ -11,7 +12,6 @@ const game = new Game({
 	resolution: 1,
 });
 
-game.addScenes(mainScene, labScene);
-game.startScene('main');
+game.startScene(MainScene);
 
 document.body.appendChild(game.view);
