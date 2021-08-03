@@ -1,1 +1,4 @@
-var x = 5;
+import { hello, hi } from 'miaam';
+
+hello();
+hi();
