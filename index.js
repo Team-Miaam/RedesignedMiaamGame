@@ -1,8 +1,9 @@
-import { Game } from 'miaam';
+import { GameManager, SceneManager } from 'miaam';
 
 import MainScene from './scenes/main.js';
 
-const game = Game.getInstance();
+const game = GameManager.getInstance();
+const scenes = SceneManager.getInstance();
 
 game.createWindow({
 	width: 512,
@@ -12,6 +13,8 @@ game.createWindow({
 	resolution: 1,
 });
 
-game.startScene(MainScene);
+scenes.addScene(MainScene);
+scenes.startScene(MainScene.name);
+scenes.setMainView(MainScene.name);
 
 document.body.appendChild(game.window);

@@ -1,4 +1,4 @@
-import { Game, Scene, View, Camera } from 'miaam';
+import { Scene, View, Camera } from 'miaam';
 
 import Player from '../entities/player.js';
 
@@ -18,6 +18,7 @@ class MainScene extends Scene {
 	#camera;
 
 	onCreate() {
+		super.onCreate();
 		this.#world = new View(this.resources.mainMap);
 
 		this.#player = new Player();
@@ -34,17 +35,19 @@ class MainScene extends Scene {
 	}
 
 	onUpdate(ticker) {
+		super.onUpdate();
 		this.#camera.follow(this.#player);
 	}
 
-	onDestroy() {}
+	onDestroy() {
+		super.onDestroy();
+	}
 
 	setupEventListeners() {
 		this.addEventListener({
 			name: 'onLabEntry',
 			onAction: (event) => {
 				// switch scene
-				// Game.getInstance().startScene(LabScene, data)
 			},
 		});
 	}
