@@ -12,11 +12,17 @@ class Player extends Entity {
 	playerMovementVelocity = 1;
 
 	onCreate() {
+		super.onCreate();
 		this.setupEventListeners();
 	}
 
-	onUpdate() {}
-	onDestroy() {}
+	onUpdate() {
+		super.onUpdate();
+	}
+
+	onDestroy() {
+		super.onDestroy();
+	}
 
 	setupEventListeners() {
 		Keyboard.addListenerOnPress({
