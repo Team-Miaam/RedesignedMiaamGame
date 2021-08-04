@@ -1,4 +1,6 @@
-import { Game, Scene, Entity, View, Camera, Keyboard } from 'miaam';
+import { Game, Scene, View, Camera } from 'miaam';
+
+import Player from '../entities/player.js';
 
 class MainScene extends Scene {
 	assets = [
@@ -6,11 +8,6 @@ class MainScene extends Scene {
 			name: 'mainMap',
 			url: 'mainSceneMap.json',
 			type: 'map',
-		},
-		{
-			name: 'playerSpriteAnimationSheet',
-			url: 'playerAnimationSheet.json',
-			type: 'animation',
 		},
 	];
 
@@ -23,20 +20,17 @@ class MainScene extends Scene {
 	onCreate() {
 		this.#world = new View(this.resources.mainMap);
 
-		this.#player = new Entity({
-			name: 'player',
-			animationSheet: this.resources.playerSpriteAnimationSheet,
-		});
-		this.setupPlayerMovement();
+		this.#player = new Player();
+		// adding entities to the scene
+		this.addEntity(this.#player);
 
 		this.#camera = new Camera(this.#world);
 		this.#camera.centerOver(this.#player);
 
 		this.setupEventListeners();
 
-		// setting up view and entities of the scene
-		this.view = this.#world;
-		this.entities.push(this.#player);
+		// setting the view of the scene
+		this.setView(this.#world);
 	}
 
 	onUpdate(ticker) {
@@ -45,23 +39,10 @@ class MainScene extends Scene {
 
 	onDestroy() {}
 
-	setupPlayerMovement() {
-		const playerVelocity = 1;
-		Keyboard.addListenerOnPress({
-			key: 'ArrowLeft',
-			onAction: () => {
-				this.#player.transform.x += playerVelocity;
-				this.#player.animation.setState('walkWest');
-			},
-		});
-
-		// TODO: other movements
-	}
-
 	setupEventListeners() {
-		this.eventListeners.push({
+		this.addEventListener({
 			name: 'onLabEntry',
-			onAction: () => {
+			onAction: (event) => {
 				// switch scene
 				// Game.getInstance().startScene(LabScene, data)
 			},
