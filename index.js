@@ -1,10 +1,10 @@
-import { GameManager } from 'miaam';
+import { Game } from 'miaam';
 
 import MainScene from './scenes/main.js';
 
-const game = GameManager.getInstance();
+const game = Game.getInstance();
 
-game.createView({
+game.createWindow({
 	width: 512,
 	height: 512,
 	antialias: true,
@@ -14,4 +14,4 @@ game.createView({
 
 game.startScene(MainScene);
 
-document.body.appendChild(game.view);
+document.body.appendChild(game.window);

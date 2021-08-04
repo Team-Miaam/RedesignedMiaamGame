@@ -1,4 +1,4 @@
-import { GameManager, Scene, Entity, View, Camera, Keyboard } from 'miaam';
+import { Game, Scene, Entity, View, Camera, Keyboard } from 'miaam';
 
 class MainScene extends Scene {
 	assets = [
@@ -24,7 +24,7 @@ class MainScene extends Scene {
 		this.#world = new View(this.resources.mainMap);
 
 		this.#player = new Entity({
-			name: '#player',
+			name: 'player',
 			animationSheet: this.resources.playerSpriteAnimationSheet,
 		});
 		this.setupPlayerMovement();
@@ -63,7 +63,7 @@ class MainScene extends Scene {
 			name: 'onLabEntry',
 			onAction: () => {
 				// switch scene
-				// GameManager.getInstance().startScene(LabScene, data)
+				// Game.getInstance().startScene(LabScene, data)
 			},
 		});
 	}
