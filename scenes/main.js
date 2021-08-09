@@ -3,23 +3,27 @@ import { Scene, View, Camera } from 'miaam';
 import Player from '../entities/player.js';
 
 class MainScene extends Scene {
-	assets = [
-		{
-			name: 'mainMap',
-			url: 'mainSceneMap.json',
-			type: 'map',
-		},
-	];
-
 	#world;
 
 	#player;
 
 	#camera;
 
-	onCreate() {
-		super.onCreate();
-		this.#world = new View(this.resources.mainMap);
+	onAwake() {
+		this.assets = [
+			{
+				name: 'mainMap',
+				url: './assets/tilemap/mainSceneMap.json',
+				type: 'map',
+			},
+		];
+	}
+
+	onStart() {
+		super.onStart();
+		const { mainMap } = this.getLoadedAssets().maps;
+		console.log(mainMap);
+		this.#world = new View(mainMap);
 
 		this.#player = new Player();
 		// adding entities to the scene
