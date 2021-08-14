@@ -14,7 +14,5 @@ game.createWindow({
 });
 
 scenes.addScene(MainScene);
-scenes.startScene(MainScene.name);
-scenes.setMainView(MainScene.name);
 
-document.body.appendChild(game.window);
+document.body.appendChild(game.getWindow());
