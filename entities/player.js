@@ -20,6 +20,7 @@ class Player extends Entity {
 		const { playerSpriteAnimationSheet } = this.assets.animations;
 		// this.setupEventListeners();
 		this.sprite = new AnimatedSpriteWState(playerSpriteAnimationSheet);
+		this.sprite.state = 'walkingLeft';
 	}
 
 	onUpdate() {

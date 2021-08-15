@@ -39,14 +39,14 @@ class MainScene extends Scene {
 		// setting the view of the scene
 		this.view = world;
 
-		const gameScreen = GameManager.getInstance().getApp().screen;
+		const gameScreen = GameManager.instance.app.screen;
 		this.#camera = new Camera(this, gameScreen.width, gameScreen.height);
 		this.#camera.centerOver(this.#player);
 
 		// start the main scene
-		const scenes = SceneManager.getInstance();
+		const scenes = SceneManager.instance;
 		scenes.startScene(MainScene.name);
-		scenes.setMainView(MainScene.name);
+		scenes.view = MainScene.name;
 	}
 
 	onUpdate(ticker) {
