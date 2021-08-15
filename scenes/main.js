@@ -1,10 +1,8 @@
-import { SceneManager, Scene, View, Camera } from 'miaam';
+import { SceneManager, Scene, View, Camera, GameManager } from 'miaam';
 
 import Player from '../entities/player.js';
 
 class MainScene extends Scene {
-	#world;
-
 	#player;
 
 	#camera;
@@ -17,6 +15,14 @@ class MainScene extends Scene {
 				type: 'map',
 			},
 		];
+
+		this.entities = [
+			{
+				name: 'player',
+				type: Player,
+				args: {},
+			},
+		];
 	}
 
 	onStart() {
@@ -24,18 +30,16 @@ class MainScene extends Scene {
 		const { mainMap } = this.getLoadedAssets().maps;
 		this.setMap(mainMap);
 
-		// this.#player = new Player();
-		// adding entities to the scene
-		// this.addEntity(this.#player);
+		this.#player = this.getEntities().player;
 
-		this.#world = new View(this);
-		// this.#camera = new Camera(this.#world);
-		// this.#camera.centerOver(this.#player);
-
-		// this.setupEventListeners();
+		const world = new View(this);
 
 		// setting the view of the scene
-		this.setView(this.#world);
+		this.setView(world);
+
+		const gameScreen = GameManager.getInstance().getApp().screen;
+		this.#camera = new Camera(this, gameScreen.width, gameScreen.height);
+		this.#camera.centerOver(this.#player);
 
 		// start the main scene
 		const scenes = SceneManager.getInstance();
