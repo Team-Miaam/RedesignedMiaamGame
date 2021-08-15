@@ -4,13 +4,15 @@ class Player extends Entity {
 	playerMovementVelocity = 1;
 
 	onCreate() {
-		this.assets = [
-			{
-				name: 'playerSpriteAnimationSheet',
-				url: './assets/animation/playerAnimation.json',
-				type: 'animation',
-			},
-		];
+		this.preload = {
+			assets: [
+				{
+					name: 'playerSpriteAnimationSheet',
+					url: './assets/animation/playerAnimation.json',
+					type: 'animation',
+				},
+			],
+		};
 	}
 
 	onStart() {

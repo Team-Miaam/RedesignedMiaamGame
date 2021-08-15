@@ -8,21 +8,23 @@ class MainScene extends Scene {
 	#camera;
 
 	onCreate() {
-		this.assets = [
-			{
-				name: 'mainMap',
-				url: './assets/tilemap/mainSceneMap.json',
-				type: 'map',
-			},
-		];
+		this.preload = {
+			assets: [
+				{
+					name: 'mainMap',
+					url: './assets/tilemap/mainSceneMap.json',
+					type: 'map',
+				},
+			],
 
-		this.entities = [
-			{
-				name: 'player',
-				type: Player,
-				args: {},
-			},
-		];
+			entities: [
+				{
+					name: 'player',
+					type: Player,
+					args: {},
+				},
+			],
+		};
 	}
 
 	onStart() {
