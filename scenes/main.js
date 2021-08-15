@@ -1,46 +1,52 @@
-import { SceneManager, Scene, View, Camera } from 'miaam';
+import { SceneManager, Scene, View, Camera, GameManager } from 'miaam';
 
 import Player from '../entities/player.js';
 
 class MainScene extends Scene {
-	#world;
-
 	#player;
 
 	#camera;
 
 	onCreate() {
-		this.assets = [
-			{
-				name: 'mainMap',
-				url: './assets/tilemap/mainSceneMap.json',
-				type: 'map',
-			},
-		];
+		this.preload = {
+			assets: [
+				{
+					name: 'mainMap',
+					url: './assets/tilemap/mainSceneMap.json',
+					type: 'map',
+				},
+			],
+
+			entities: [
+				{
+					name: 'player',
+					type: Player,
+					args: {},
+				},
+			],
+		};
 	}
 
 	onStart() {
 		super.onStart();
-		const { mainMap } = this.getLoadedAssets().maps;
-		this.setMap(mainMap);
+		const { mainMap } = this.assets.maps;
+		this.map = mainMap;
 
-		// this.#player = new Player();
-		// adding entities to the scene
-		// this.addEntity(this.#player);
+		this.#player = this.entities.player;
 
-		this.#world = new View(this);
-		// this.#camera = new Camera(this.#world);
-		// this.#camera.centerOver(this.#player);
-
-		// this.setupEventListeners();
+		const world = new View(this);
 
 		// setting the view of the scene
-		this.setView(this.#world);
+		this.view = world;
+
+		const gameScreen = GameManager.instance.app.screen;
+		this.#camera = new Camera(this, gameScreen.width, gameScreen.height);
+		this.#camera.centerOver(this.#player);
 
 		// start the main scene
-		const scenes = SceneManager.getInstance();
+		const scenes = SceneManager.instance;
 		scenes.startScene(MainScene.name);
-		scenes.setMainView(MainScene.name);
+		scenes.view = MainScene.name;
 	}
 
 	onUpdate(ticker) {

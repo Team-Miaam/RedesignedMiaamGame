@@ -1,19 +1,26 @@
-import { Entity, Keyboard } from 'miaam';
+import { Entity, Keyboard, AnimatedSpriteWState } from 'miaam';
 
 class Player extends Entity {
-	assets = [
-		{
-			name: 'playerSpriteAnimationSheet',
-			url: 'playerAnimationSheet.json',
-			type: 'animation',
-		},
-	];
-
 	playerMovementVelocity = 1;
 
 	onCreate() {
-		super.onCreate();
-		this.setupEventListeners();
+		this.preload = {
+			assets: [
+				{
+					name: 'playerSpriteAnimationSheet',
+					url: './assets/animation/playerAnimation.json',
+					type: 'animation',
+				},
+			],
+		};
+	}
+
+	onStart() {
+		super.onStart();
+		const { playerSpriteAnimationSheet } = this.assets.animations;
+		// this.setupEventListeners();
+		this.sprite = new AnimatedSpriteWState(playerSpriteAnimationSheet);
+		this.sprite.state = 'walkingLeft';
 	}
 
 	onUpdate() {
