@@ -17,9 +17,9 @@ class Player extends Entity {
 
 	onStart() {
 		super.onStart();
-		const { playerSpriteAnimationSheet } = this.getLoadedAssets().animations;
+		const { playerSpriteAnimationSheet } = this.assets.animations;
 		// this.setupEventListeners();
-		this.setSprite(new AnimatedSpriteWState(playerSpriteAnimationSheet));
+		this.sprite = new AnimatedSpriteWState(playerSpriteAnimationSheet);
 	}
 
 	onUpdate() {

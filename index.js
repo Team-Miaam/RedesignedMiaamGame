@@ -9,7 +9,7 @@ game.createWindow({
 	width: 512,
 	height: 512,
 	antialias: true,
-	transparent: false,
+	backgroundAlpha: false,
 	resolution: 1,
 });
 
