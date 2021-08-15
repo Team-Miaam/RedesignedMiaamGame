@@ -29,15 +29,15 @@ class MainScene extends Scene {
 
 	onStart() {
 		super.onStart();
-		const { mainMap } = this.getLoadedAssets().maps;
-		this.setMap(mainMap);
+		const { mainMap } = this.assets.maps;
+		this.map = mainMap;
 
-		this.#player = this.getEntities().player;
+		this.#player = this.entities.player;
 
 		const world = new View(this);
 
 		// setting the view of the scene
-		this.setView(world);
+		this.view = world;
 
 		const gameScreen = GameManager.getInstance().getApp().screen;
 		this.#camera = new Camera(this, gameScreen.width, gameScreen.height);
