@@ -50,7 +50,7 @@ class MainScene extends Scene {
 	}
 
 	onUpdate(ticker) {
-		super.onUpdate();
+		super.onUpdate(ticker);
 		this.#camera.follow(this.#player);
 	}
 

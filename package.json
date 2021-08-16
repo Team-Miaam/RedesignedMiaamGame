@@ -1,7 +1,7 @@
 {
-	"name": "miaam-ecs",
+	"name": "miaam-test-game",
 	"version": "0.0.1",
-	"description": "ECS Framework by Miaam",
+	"description": "Test Driven Implementation of Miaam",
 	"main": "index.js",
 	"scripts": {
 		"format": "prettier --write .",
@@ -12,7 +12,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Team-Miaam/miaam-ecs.git"
+		"url": "git+https://github.com/Team-Miaam/RedesignedMiaamGame.git"
 	},
 	"keywords": [
 		"Entity",
@@ -25,9 +25,9 @@
 	"author": "Noman5237",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/Team-Miaam/miaam-ecs/issues"
+		"url": "https://github.com/Team-Miaam/RedesignedMiaamGame/issues"
 	},
-	"homepage": "https://github.com/Team-Miaam/miaam-ecs#readme",
+	"homepage": "https://github.com/Team-Miaam/RedesignedMiaamGame#readme",
 	"devDependencies": {
 		"@babel/core": "^7.14.0",
 		"@babel/eslint-parser": "^7.13.14",
