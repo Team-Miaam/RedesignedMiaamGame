@@ -1,4 +1,11 @@
 { "compressionlevel":-1,
+ "editorsettings":
+    {
+     "export":
+        {
+         "target":"."
+        }
+    },
  "height":30,
  "infinite":false,
  "layers":[
@@ -65,6 +72,17 @@
                  "width":0,
                  "x":1035,
                  "y":445
+                }, 
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"npc_noman",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":625.333333333333,
+                 "y":366.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -85,10 +103,10 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":2,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.7.0",
+ "tiledversion":"1.4.3",
  "tileheight":32,
  "tilesets":[
         {
@@ -97,6 +115,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.6",
+ "version":1.4,
  "width":40
 }
