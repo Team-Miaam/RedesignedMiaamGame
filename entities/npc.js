@@ -16,7 +16,6 @@ class Npc extends Entity {
 	onStart() {
 		super.onStart();
 		const { npc_noman } = this.assets.images;
-		console.log(npc_noman);
 		this.sprite = new Sprite(npc_noman.texture);
 	}
 }

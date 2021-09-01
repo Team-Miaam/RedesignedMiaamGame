@@ -1,4 +1,4 @@
-import { SceneManager, Scene, View, Camera, GameManager, Keyboard, Dialogue } from 'miaam';
+import { SceneManager, Scene, View, Camera, GameManager, Keyboard, Dialogue, BitmapText } from 'miaam';
 
 import Player from '../entities/player.js';
 import Npc from '../entities/npc.js';
@@ -10,6 +10,12 @@ class MainScene extends Scene {
 	onCreate() {
 		this.preload = {
 			assets: [
+				{
+					name: 'minecraft',
+					url: './assets/fonts/mine.xml',
+					type: 'font',
+				},
+
 				{
 					name: 'mainMap',
 					url: './assets/tilemap/mainSceneMap.json',
@@ -34,6 +40,8 @@ class MainScene extends Scene {
 
 	onStart() {
 		super.onStart();
+		const { minecraft } = this.assets.fonts;
+		console.log(minecraft);
 		const { mainMap } = this.assets.maps;
 		this.map = mainMap;
 
@@ -52,13 +60,22 @@ class MainScene extends Scene {
 		const scenes = SceneManager.instance;
 		scenes.startScene(MainScene.name);
 		scenes.view = MainScene.name;
-		let nomanDialogue = [
-			'helloooooooooooo\noooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-			'nice',
-			'goodbye',
-		];
+		let nomanDialogue = ['hello', 'nice', 'goodbye'];
 		this.dialogues = new Dialogue(nomanDialogue);
 		this.initiateKeyboard();
+		this.onAssetsLoaded();
+	}
+
+	onAssetsLoaded() {
+		const bitmapFontText = new BitmapText('bitmap fonts are supported!\nWoo yay!', {
+			fontName: 'Minecraft',
+			align: 'left',
+		});
+		bitmapFontText.x = 50;
+		bitmapFontText.y = 200;
+
+		console.log(bitmapFontText);
+		GameManager.instance.app.stage.addChild(bitmapFontText);
 	}
 
 	initiateKeyboard() {
