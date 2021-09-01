@@ -53,7 +53,7 @@
         {
          "draworder":"topdown",
          "id":6,
-         "name":"entities",
+         "name":"player",
          "objects":[
                 {
                  "height":0,
