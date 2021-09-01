@@ -61,21 +61,8 @@ class MainScene extends Scene {
 		scenes.startScene(MainScene.name);
 		scenes.view = MainScene.name;
 		let nomanDialogue = ['hello', 'nice', 'goodbye'];
-		this.dialogues = new Dialogue(nomanDialogue);
+		this.dialogues = new Dialogue(nomanDialogue, 'Minecraft');
 		this.initiateKeyboard();
-		this.onAssetsLoaded();
-	}
-
-	onAssetsLoaded() {
-		const bitmapFontText = new BitmapText('bitmap fonts are supported!\nWoo yay!', {
-			fontName: 'Minecraft',
-			align: 'left',
-		});
-		bitmapFontText.x = 50;
-		bitmapFontText.y = 200;
-
-		console.log(bitmapFontText);
-		GameManager.instance.app.stage.addChild(bitmapFontText);
 	}
 
 	initiateKeyboard() {
