@@ -7,32 +7,25 @@ class MainScene extends Scene {
 
 	#camera;
 
-	onCreate() {
-		this.preload = {
-			assets: [
-				{
-					name: 'mainMap',
-					url: './assets/tilemap/mainSceneMap.json',
-					type: 'map',
-				},
-			],
+	static preload = {
+		assets: [
+			{
+				name: 'mainMap',
+				url: './assets/tilemap/mainSceneMap.json',
+				type: 'map',
+			},
+		],
 
-			entities: [
-				{
-					name: 'player',
-					type: Player,
-					args: {},
-				},
-			],
-		};
-	}
+		entities: [Player],
+	};
 
 	onStart() {
 		super.onStart();
-		const { mainMap } = this.assets.maps;
+		const { mainMap } = MainScene.assets.maps;
 		this.map = mainMap;
 
-		this.#player = this.entities.player;
+		this.#player = new Player('Ash');
+		this.addEntity(this.#player);
 
 		const world = new View(this);
 
@@ -58,14 +51,7 @@ class MainScene extends Scene {
 		super.onDestroy();
 	}
 
-	setupEventListeners() {
-		this.addEventListener({
-			name: 'onLabEntry',
-			onAction: (event) => {
-				// switch scene
-			},
-		});
-	}
+	setupEventListeners() {}
 }
 
 export default MainScene;

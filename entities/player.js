@@ -3,21 +3,19 @@ import { Entity, Keyboard, AnimatedSpriteWState } from 'miaam';
 class Player extends Entity {
 	#playerMovementVelocity = 1;
 
-	onCreate() {
-		this.preload = {
-			assets: [
-				{
-					name: 'playerSpriteAnimationSheet',
-					url: './assets/animation/playerAnimation.json',
-					type: 'animation',
-				},
-			],
-		};
-	}
+	static preload = {
+		assets: [
+			{
+				name: 'playerSpriteAnimationSheet',
+				url: './assets/animation/playerAnimation.json',
+				type: 'animation',
+			},
+		],
+	};
 
 	onStart() {
 		super.onStart();
-		const { playerSpriteAnimationSheet } = this.assets.animations;
+		const { playerSpriteAnimationSheet } = Player.assets.animations;
 		this.sprite = new AnimatedSpriteWState(playerSpriteAnimationSheet);
 		this.#setupEventListeners();
 	}
