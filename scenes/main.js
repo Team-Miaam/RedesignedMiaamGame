@@ -3,10 +3,6 @@ import { SceneManager, Scene, View, Camera, GameManager } from 'miaam';
 import Player from '../entities/player.js';
 
 class MainScene extends Scene {
-	#player;
-
-	#camera;
-
 	static preload = {
 		assets: [
 			{
@@ -19,13 +15,19 @@ class MainScene extends Scene {
 		entities: [Player],
 	};
 
+	#player;
+
+	#camera;
+
 	onStart() {
 		super.onStart();
 		const { mainMap } = MainScene.assets.maps;
 		this.map = mainMap;
 
-		this.#player = new Player('Ash');
+		this.#player = new Player({ name: 'Ash' });
+		this.x = new Player({ name: 'Bruh' });
 		this.addEntity(this.#player);
+		this.addEntity(this.x);
 
 		const world = new View(this);
 
@@ -50,8 +52,6 @@ class MainScene extends Scene {
 	onDestroy() {
 		super.onDestroy();
 	}
-
-	setupEventListeners() {}
 }
 
 export default MainScene;

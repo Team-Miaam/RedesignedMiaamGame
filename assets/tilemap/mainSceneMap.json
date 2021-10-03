@@ -53,18 +53,29 @@
         {
          "draworder":"topdown",
          "id":6,
-         "name":"player",
+         "name":"players",
          "objects":[
                 {
                  "height":0,
                  "id":1,
-                 "name":"player",
+                 "name":"Ash",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
                  "x":1035,
                  "y":445
+                }, 
+                {
+                 "height":0,
+                 "id":2,
+                 "name":"Bruh",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":930,
+                 "y":452
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -85,7 +96,7 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":2,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.0",

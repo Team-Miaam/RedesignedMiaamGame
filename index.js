@@ -13,9 +13,6 @@ game.createWindow({
 	resolution: 1,
 });
 
-MainScene.Load();
-MainScene.loader.onComplete.add(() => {
-	scenes.addScene(new MainScene());
-});
+scenes.addScene(MainScene);
 
 document.body.appendChild(game.window);
