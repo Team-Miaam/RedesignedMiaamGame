@@ -26,13 +26,8 @@ class MainScene extends Scene {
 
 		this.#player = new Player({ name: 'Ash' });
 		this.x = new Player({ name: 'Bruh' });
-		this.addEntity(this.#player);
-		this.addEntity(this.x);
-
-		const world = new View(this);
-
-		// setting the view of the scene
-		this.view = world;
+		this.addEntity({ layer: 'players', entity: this.#player });
+		this.addEntity({ layer: 'players', entity: this.x });
 
 		const gameScreen = GameManager.instance.app.screen;
 		this.#camera = new Camera(this, gameScreen.width, gameScreen.height);
