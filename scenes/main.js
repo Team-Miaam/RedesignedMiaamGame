@@ -1,7 +1,7 @@
-import { SceneManager, Scene, View, Camera, GameManager } from 'miaam';
+import { SceneManager, Scene, View, Camera, GameManager, Keyboard, Dialogue } from 'miaam';
 
 import Player from '../entities/player.js';
-
+import Npc from '../entities/npc.js';
 class MainScene extends Scene {
 	static preload = {
 		assets: [
@@ -37,6 +37,18 @@ class MainScene extends Scene {
 		const scenes = SceneManager.instance;
 		scenes.startScene(MainScene.name);
 		scenes.view = MainScene.name;
+		const nomanDialogue = ['helloooooooooooo', 'nice', 'goodbye'];
+		this.dialogues = new Dialogue(nomanDialogue);
+		this.initiateKeyboard();
+	}
+
+	initiateKeyboard() {
+		Keyboard.key('a').addActionOnDown({
+			name: 'nextText',
+			action: () => {
+				this.dialogues.nextText();
+			},
+		});
 	}
 
 	onUpdate(ticker) {
