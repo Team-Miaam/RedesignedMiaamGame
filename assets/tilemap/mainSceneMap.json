@@ -60,12 +60,12 @@
         {
          "draworder":"topdown",
          "id":6,
-         "name":"entities",
+         "name":"players",
          "objects":[
                 {
                  "height":0,
                  "id":1,
-                 "name":"player",
+                 "name":"Ash",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -75,14 +75,14 @@
                 }, 
                 {
                  "height":0,
-                 "id":3,
-                 "name":"npc_noman",
+                 "id":2,
+                 "name":"Bruh",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":625.333333333333,
-                 "y":366.666666666667
+                 "x":930,
+                 "y":452
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -103,7 +103,7 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":4,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",

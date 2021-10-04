@@ -3,39 +3,38 @@ import { Entity, Keyboard, AnimatedSpriteWState } from 'miaam';
 class Player extends Entity {
 	#playerMovementVelocity = 1;
 
-	onCreate() {
-		this.preload = {
-			assets: [
-				{
-					name: 'playerSpriteAnimationSheet',
-					url: './assets/animation/playerAnimation.json',
-					type: 'animation',
-				},
-			],
-		};
-	}
+	static preload = {
+		assets: [
+			{
+				name: 'playerSpriteAnimationSheet',
+				url: './assets/animation/playerAnimation.json',
+				type: 'animation',
+			},
+		],
+	};
 
 	onStart() {
 		super.onStart();
-		const { playerSpriteAnimationSheet } = this.assets.animations;
+		const { playerSpriteAnimationSheet } = Player.assets.animations;
 		this.sprite = new AnimatedSpriteWState(playerSpriteAnimationSheet);
-		this.#setupEventListeners();
+		this.setupEventListeners();
 	}
 
 	onUpdate(delta) {
 		super.onUpdate(delta);
-		this.#playerMovement(delta);
+		this.playerMovement(delta);
 	}
 
 	onDestroy() {
 		super.onDestroy();
 	}
 
-	#setupEventListeners() {
-		this.#setupAnimationStateTransitions();
+	setupEventListeners() {
+		// FIXME: Manage the event system with event registry
+		this.setupAnimationStateTransitions();
 	}
 
-	#playerMovement(delta) {
+	playerMovement(delta) {
 		const displacement = this.#playerMovementVelocity * delta;
 		if (Keyboard.key('ArrowLeft').isDown) {
 			this.transform = {
@@ -56,58 +55,58 @@ class Player extends Entity {
 		}
 	}
 
-	#setupAnimationStateTransitions() {
+	setupAnimationStateTransitions() {
 		Keyboard.key('ArrowLeft').addActionOnDown({
-			name: 'playerAnimationWalkingLeft',
+			name: `${this.name}.playerAnimationWalkingLeft`,
 			action: () => {
 				this.sprite.state = 'walkingLeft';
 			},
 		});
 
 		Keyboard.key('ArrowLeft').addActionOnUp({
-			name: 'playerAnimationIdleLeft',
+			name: `${this.name}.playerAnimationIdleLeft`,
 			action: () => {
 				this.sprite.state = 'idleLeft';
 			},
 		});
 
 		Keyboard.key('ArrowRight').addActionOnDown({
-			name: 'playerAnimationWalkingRight',
+			name: `${this.name}.playerAnimationWalkingRight`,
 			action: () => {
 				this.sprite.state = 'walkingRight';
 			},
 		});
 
 		Keyboard.key('ArrowRight').addActionOnUp({
-			name: 'playerAnimationIdleRight',
+			name: `${this.name}.playerAnimationIdleRight`,
 			action: () => {
 				this.sprite.state = 'idleRight';
 			},
 		});
 
 		Keyboard.key('ArrowUp').addActionOnDown({
-			name: 'playerAnimationWalkingUp',
+			name: `${this.name}.playerAnimationWalkingUp`,
 			action: () => {
 				this.sprite.state = 'walkingUp';
 			},
 		});
 
 		Keyboard.key('ArrowUp').addActionOnUp({
-			name: 'playerAnimationIdleUp',
+			name: `${this.name}.playerAnimationIdleUp`,
 			action: () => {
 				this.sprite.state = 'idleUp';
 			},
 		});
 
 		Keyboard.key('ArrowDown').addActionOnDown({
-			name: 'playerAnimationWalkingDown',
+			name: `${this.name}.playerAnimationWalkingDown`,
 			action: () => {
 				this.sprite.state = 'walkingDown';
 			},
 		});
 
 		Keyboard.key('ArrowDown').addActionOnUp({
-			name: 'playerAnimationIdleDown',
+			name: `${this.name}.playerAnimationIdleDown`,
 			action: () => {
 				this.sprite.state = 'idleDown';
 			},

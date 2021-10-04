@@ -1,0 +1,146 @@
+{
+    "activeFile": "tilemap/mainSceneMap.json",
+    "expandedProjectPaths": [
+        "P:/GameDevelopment/IUTPokemon/RedesignedMiaamGame",
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON",
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/images",
+        "world",
+        "P:/GameDevelopment/IUTPokemon/RenderingNCameraPrototype/public/assets/tilesets",
+        "tilemap",
+        ".",
+        "tileset",
+        "P:/GameDevelopment/IUTPokemon/RenderingNCameraPrototype/public/assets/maps"
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/playerAnimation.json": {
+            "scale": 5.0154411764705875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 67.19249376924205,
+                "y": 84.93769242046622
+            }
+        },
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/playerTile.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/testtileset.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/worldtile.json": {
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 382.6666666666667,
+                "y": 406.66666666666663
+            }
+        },
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/worldtileScene2.json": {
+            "scale": 0.6669791666666666,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 424.3011088552242,
+                "y": 350.83554583788856
+            }
+        },
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/worldtileset.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "P:/GameDevelopment/IUTPokemon/RenderingNCameraPrototype/public/assets/maps/world0.json": {
+            "scale": 2.3453125,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 159.89340439706865,
+                "y": 159.68021319120587
+            }
+        },
+        "P:/GameDevelopment/IUTPokemon/RenderingNCameraPrototype/public/assets/tilesets/Interiors_free_32x32.json": {
+            "scaleInDock": 1
+        },
+        "P:/GameDevelopment/IUTPokemon/RenderingNCameraPrototype/public/assets/tilesets/Serene_Village_32x32.json": {
+            "scaleInDock": 1
+        },
+        "tilemap/mainScene.json": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 622,
+                "y": 402
+            }
+        },
+        "tilemap/mainSceneMap.json": {
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 568,
+                "y": 394
+            }
+        },
+        "tilemap/mainSceneMap.json#interiors": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilemap/mainSceneMap.json#playerWalking": {
+            "scaleInEditor": 1
+        },
+        "tilemap/mainSceneMap.json#rooms": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tileset/interior.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tileset/interiors.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tileset/playerIdle.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tileset/playerRunning.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tileset/playerWalking.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tileset/rooms.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tileset/yellowRoom.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "P:/GameDevelopment/IUTPokemon/RedesignedMiaamGame/assets/tilemap",
+    "last.externalTilesetPath": "P:/GameDevelopment/IUTPokemon/RedesignedMiaamGame/assets/tileset",
+    "map.lastUsedExportFilter": "JSON map files (*.json)",
+    "openFiles": [
+        "tilemap/mainSceneMap.json"
+    ],
+    "project": "redesignedMiaam.tiled-project",
+    "recentFiles": [
+        "tilemap/mainSceneMap.json",
+        "tileset/interiors.json",
+        "tileset/playerIdle.json",
+        "tileset/rooms.json",
+        "tileset/playerWalking.json",
+        "tilemap/mainScene.json",
+        "tileset/playerRunning.json",
+        "tileset/yellowRoom.json",
+        "tileset/interior.json",
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/playerAnimation.json",
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/worldtile.json",
+        "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/worldtileset.json"
+    ],
+    "tileset.lastUsedFilter": "JSON tileset files (*.json)"
+}

@@ -3,46 +3,31 @@ import { SceneManager, Scene, View, Camera, GameManager, Keyboard, Dialogue } fr
 import Player from '../entities/player.js';
 import Npc from '../entities/npc.js';
 class MainScene extends Scene {
+	static preload = {
+		assets: [
+			{
+				name: 'mainMap',
+				url: './assets/tilemap/mainSceneMap.json',
+				type: 'map',
+			},
+		],
+
+		entities: [Player],
+	};
+
 	#player;
-	dialogues;
+
 	#camera;
-
-	onCreate() {
-		this.preload = {
-			assets: [
-				{
-					name: 'mainMap',
-					url: './assets/tilemap/mainSceneMap.json',
-					type: 'map',
-				},
-			],
-
-			entities: [
-				{
-					name: 'player',
-					type: Player,
-					args: {},
-				},
-				{
-					name: 'npc_noman',
-					type: Npc,
-					args: {},
-				},
-			],
-		};
-	}
 
 	onStart() {
 		super.onStart();
-		const { mainMap } = this.assets.maps;
+		const { mainMap } = MainScene.assets.maps;
 		this.map = mainMap;
 
-		this.#player = this.entities.player;
-
-		const world = new View(this);
-
-		// setting the view of the scene
-		this.view = world;
+		this.#player = new Player({ name: 'Ash' });
+		this.x = new Player({ name: 'Bruh' });
+		this.addEntity({ layer: 'players', entity: this.#player });
+		this.addEntity({ layer: 'players', entity: this.x });
 
 		const gameScreen = GameManager.instance.app.screen;
 		this.#camera = new Camera(this, gameScreen.width, gameScreen.height);
@@ -52,11 +37,7 @@ class MainScene extends Scene {
 		const scenes = SceneManager.instance;
 		scenes.startScene(MainScene.name);
 		scenes.view = MainScene.name;
-		let nomanDialogue = [
-			'helloooooooooooo\noooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-			'nice',
-			'goodbye',
-		];
+		const nomanDialogue = ['helloooooooooooo', 'nice', 'goodbye'];
 		this.dialogues = new Dialogue(nomanDialogue);
 		this.initiateKeyboard();
 	}
@@ -77,15 +58,6 @@ class MainScene extends Scene {
 
 	onDestroy() {
 		super.onDestroy();
-	}
-
-	setupEventListeners() {
-		this.addEventListener({
-			name: 'onLabEntry',
-			onAction: (event) => {
-				// switch scene
-			},
-		});
 	}
 }
 
