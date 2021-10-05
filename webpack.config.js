@@ -1,5 +1,4 @@
 module.exports = {
-	mode: 'development',
 	target: 'web',
 	module: {
 		rules: [
@@ -13,7 +12,6 @@ module.exports = {
 	entry: {
 		index: './index.js',
 	},
-	watch: true,
 	watchOptions: {
 		ignored: '/node_modules/',
 	},
