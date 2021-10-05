@@ -8,7 +8,7 @@
 		"lint": "eslint .",
 		"build": "webpack",
 		"dev:build": "webpack watch --mode development",
-		"dev:serve": "http-server",
+		"dev:serve": "live-server",
 		"dev": "concurrently npm:dev:*",
 		"test": "mocha || exit 0",
 		"doc": "jsdoc src -r -d docs"
@@ -45,8 +45,8 @@
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-prettier": "^3.4.0",
-		"http-server": "^13.0.2",
 		"jsdoc": "^3.6.7",
+		"live-server": "^1.2.1",
 		"mocha": "^9.0.0",
 		"prettier": "^2.2.1",
 		"source-map-loader": "^3.0.0",
