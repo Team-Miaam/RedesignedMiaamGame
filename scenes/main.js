@@ -37,6 +37,8 @@ class MainScene extends Scene {
 		const scenes = SceneManager.instance;
 		scenes.startScene(MainScene.name);
 		scenes.view = MainScene.name;
+
+		// UI
 		const nomanDialogue = ['helloooooooooooo', 'nice', 'goodbye'];
 		this.dialogues = new Dialogue(nomanDialogue);
 		this.initiateKeyboard();
