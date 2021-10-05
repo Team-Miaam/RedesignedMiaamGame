@@ -21,6 +21,10 @@
         "": {
             "scaleInDock": 1
         },
+        "P:/GameDevelopment/IUTPokemon/Elementals/assets/tilesets/wind_hashashin.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "P:/GameDevelopment/IUTPokemon/MMORPG-Pokemon-IO-Game/pixiGame/JSON/playerAnimation.json": {
             "scale": 5.0154411764705875,
             "selectedLayer": 0,
@@ -163,7 +167,7 @@
     "frame.defaultDuration": 150,
     "last.exportedFilePath": "P:/GameDevelopment/IUTPokemon/RedesignedMiaamGame/assets/tilemap",
     "last.externalTilesetPath": "P:/GameDevelopment/IUTPokemon/RedesignedMiaamGame/assets/tileset",
-    "last.imagePath": "P:/GameDevelopment/IUTPokemon/RedesignedMiaamGame/assets/images",
+    "last.imagePath": "P:/GameDevelopment/IUTPokemon/Elementals/assets/images",
     "map.height": 4,
     "map.lastUsedExportFilter": "JSON map files (*.json)",
     "map.lastUsedFormat": "json",
@@ -176,6 +180,7 @@
     "project": "gameTiledProject.tiled-project",
     "property.type": "object",
     "recentFiles": [
+        "P:/GameDevelopment/IUTPokemon/Elementals/assets/tilesets/wind_hashashin.json",
         "tilemap/mainSceneMap.json",
         "animation/playerAnimation.json",
         "tileset/testTiledAnimation.json",
@@ -186,10 +191,13 @@
         "tileset/playerWalking.json",
         "tileset/interiors.json",
         "tileset/rooms.json",
-        "tilemap/mainScene.json",
-        "tileset/playerRunning.json"
+        "tilemap/mainScene.json"
     ],
     "textEdit.monospace": true,
     "tileset.lastUsedFilter": "JSON tileset files (*.json)",
-    "tileset.lastUsedFormat": "json"
+    "tileset.lastUsedFormat": "json",
+    "tileset.tileSize": {
+        "height": 112,
+        "width": 224
+    }
 }

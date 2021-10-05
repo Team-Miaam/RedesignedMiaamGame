@@ -1,4 +1,4 @@
-import { Entity, Keyboard, AnimatedSpriteWState } from 'miaam';
+import { Entity, Keyboard, AnimatedSpriteWState, groupD8 } from 'miaam';
 
 class Player extends Entity {
 	#playerMovementVelocity = 1;
@@ -17,7 +17,10 @@ class Player extends Entity {
 		super.onStart();
 		const { playerSpriteAnimationSheet } = Player.assets.animations;
 		this.sprite = new AnimatedSpriteWState(playerSpriteAnimationSheet);
+		this.sprite.generateRotatedTextures({ rotationName: 'horzFlip', rotationGroup: groupD8.MIRROR_HORIZONTAL });
 		this.setupEventListeners();
+		this.sprite.animationSpeed = 0.1;
+		this.sprite.anchor.set(0.5);
 	}
 
 	onUpdate(delta) {
@@ -59,56 +62,56 @@ class Player extends Entity {
 		Keyboard.key('ArrowLeft').addActionOnDown({
 			name: `${this.name}.playerAnimationWalkingLeft`,
 			action: () => {
-				this.sprite.state = 'walkingLeft';
+				this.sprite.state = { state: 'walkingLeft' };
 			},
 		});
 
 		Keyboard.key('ArrowLeft').addActionOnUp({
 			name: `${this.name}.playerAnimationIdleLeft`,
 			action: () => {
-				this.sprite.state = 'idleLeft';
+				this.sprite.state = { state: 'idleLeft' };
 			},
 		});
 
 		Keyboard.key('ArrowRight').addActionOnDown({
 			name: `${this.name}.playerAnimationWalkingRight`,
 			action: () => {
-				this.sprite.state = 'walkingRight';
+				this.sprite.state = { state: 'walkingLeft', rotationName: 'horzFlip', angle: 30 };
 			},
 		});
 
 		Keyboard.key('ArrowRight').addActionOnUp({
 			name: `${this.name}.playerAnimationIdleRight`,
 			action: () => {
-				this.sprite.state = 'idleRight';
+				this.sprite.state = { state: 'idleRight' };
 			},
 		});
 
 		Keyboard.key('ArrowUp').addActionOnDown({
 			name: `${this.name}.playerAnimationWalkingUp`,
 			action: () => {
-				this.sprite.state = 'walkingUp';
+				this.sprite.state = { state: 'walkingUp' };
 			},
 		});
 
 		Keyboard.key('ArrowUp').addActionOnUp({
 			name: `${this.name}.playerAnimationIdleUp`,
 			action: () => {
-				this.sprite.state = 'idleUp';
+				this.sprite.state = { state: 'idleUp' };
 			},
 		});
 
 		Keyboard.key('ArrowDown').addActionOnDown({
 			name: `${this.name}.playerAnimationWalkingDown`,
 			action: () => {
-				this.sprite.state = 'walkingDown';
+				this.sprite.state = { state: 'walkingDown' };
 			},
 		});
 
 		Keyboard.key('ArrowDown').addActionOnUp({
 			name: `${this.name}.playerAnimationIdleDown`,
 			action: () => {
-				this.sprite.state = 'idleDown';
+				this.sprite.state = { state: 'idleDown' };
 			},
 		});
 	}
