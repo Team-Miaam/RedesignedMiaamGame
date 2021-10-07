@@ -1,4 +1,4 @@
-import { Entity, Keyboard, AnimatedSpriteWState, groupD8 } from 'miaam';
+import { Entity, Keyboard, AnimatedSpriteWState, Bodies } from 'miaam';
 
 class Player extends Entity {
 	#playerMovementVelocity = 1;
@@ -17,10 +17,10 @@ class Player extends Entity {
 		super.onStart();
 		const { playerSpriteAnimationSheet } = Player.assets.animations;
 		this.sprite = new AnimatedSpriteWState(playerSpriteAnimationSheet);
-		this.sprite.generateRotatedTextures({ rotationName: 'horzFlip', rotationGroup: groupD8.MIRROR_HORIZONTAL });
-		this.setupEventListeners();
 		this.sprite.animationSpeed = 0.1;
-		this.sprite.anchor.set(0.5);
+		this.sprite.anchor.set(0, 0.5);
+		this.setupEventListeners();
+		this.setupBody();
 	}
 
 	onUpdate(delta) {
@@ -35,6 +35,10 @@ class Player extends Entity {
 	setupEventListeners() {
 		// FIXME: Manage the event system with event registry
 		this.setupAnimationStateTransitions();
+	}
+
+	setupBody() {
+		this.body = Bodies.rectangle(0, 0, 16, 23);
 	}
 
 	playerMovement(delta) {
@@ -76,7 +80,7 @@ class Player extends Entity {
 		Keyboard.key('ArrowRight').addActionOnDown({
 			name: `${this.name}.playerAnimationWalkingRight`,
 			action: () => {
-				this.sprite.state = { state: 'walkingLeft', rotationName: 'horzFlip', angle: 30 };
+				this.sprite.state = { state: 'walkingRight' };
 			},
 		});
 
