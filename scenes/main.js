@@ -25,8 +25,8 @@ class MainScene extends Scene {
 		const { mainMap } = MainScene.assets.maps;
 		this.map = mainMap;
 
-		// this.#player = new Box({ name: 'box', props: { x: 900, y: 410, width: 32, height: 32 } });
-		this.#player = new Player({ name: 'Ash' });
+		this.#player = new Box({ name: 'box', props: { x: 900, y: 410, width: 32, height: 32 } });
+		// this.#player = new Player({ name: 'Ash' });
 		this.addEntity({ layer: 'players', entity: this.#player });
 		this.#player.transform = {
 			x: 1024,
@@ -43,6 +43,15 @@ class MainScene extends Scene {
 		scenes.view = MainScene.name;
 		scenes.world = MainScene.name;
 		PhysicsManager.instance.engine.gravity.y = 0;
+		console.log(PhysicsManager.instance.engine.world);
+		PhysicsManager.instance.events.addEventListener('customTrigger', (event) => {
+			console.log(event.detail.pairs[0]);
+			console.log('aaa');
+		});
+		PhysicsManager.instance.events.addEventListener('custom', (event) => {
+			console.log(event.detail.pairs[0]);
+			console.log('bbb');
+		});
 	}
 
 	onUpdate(ticker) {

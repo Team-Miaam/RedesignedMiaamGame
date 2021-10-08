@@ -5,10 +5,10 @@ class Box extends Entity {
 
 	#playerMovementVelocity = 1;
 
-	onStart({ x, y, width, height }) {
+	onStart({ x = 0, y = 0, width = 0, height = 0, isSensor = false }) {
 		super.onStart();
 		this.sprite = Box.#constructRandomBoxSprite(width, height);
-		this.body = Bodies.rectangle(x, y, width, height);
+		this.body = Bodies.rectangle(x, y, width, height, { label: this.name, isSensor });
 		this.transform = {
 			x,
 			y,
