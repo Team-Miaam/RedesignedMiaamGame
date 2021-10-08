@@ -2,14 +2,14 @@ import { SceneManager, Scene, Camera, GameManager, Keyboard, Dialogue, PhysicsMa
 import Box from '../entities/box.js';
 
 import Player from '../entities/player.js';
-import OfficeScene from './office.js';
+import MainScene from './main.js';
 
-class MainScene extends Scene {
+class OfficeScene extends Scene {
 	static preload = {
 		assets: [
 			{
-				name: 'mainMap',
-				url: './assets/tilemap/mainSceneMap.json',
+				name: 'officeMap',
+				url: './assets/tilemap/officeSceneMap.json',
 				type: 'map',
 			},
 		],
@@ -23,15 +23,16 @@ class MainScene extends Scene {
 
 	onStart() {
 		super.onStart();
-		const { mainMap } = MainScene.assets.maps;
-		this.map = mainMap;
+		const { officeMap } = OfficeScene.assets.maps;
 
-		this.#player = new Box({ name: 'box', props: { x: 900, y: 410, width: 32, height: 32 } });
+		this.map = officeMap;
+
+		this.#player = new Box({ name: 'box', props: { x: 0, y: 0, width: 32, height: 32 } });
 		// this.#player = new Player({ name: 'Ash' });
 		this.addEntity({ layer: 'players', entity: this.#player });
 		this.#player.transform = {
-			x: 1024,
-			y: 416,
+			x: 550,
+			y: 600,
 		};
 
 		const gameScreen = GameManager.instance.app.screen;
@@ -40,17 +41,12 @@ class MainScene extends Scene {
 
 		// start the main scene
 		const scenes = SceneManager.instance;
-		scenes.view = MainScene.name;
-		scenes.world = MainScene.name;
+		scenes.view = OfficeScene.name;
+		scenes.world = OfficeScene.name;
 		PhysicsManager.instance.engine.gravity.y = 0;
-		console.log(PhysicsManager.instance.engine.world);
-		PhysicsManager.instance.events.addEventListener('customTrigger', () => {
+		PhysicsManager.instance.events.addEventListener('customCustom', () => {
 			scenes.stopScene();
-			scenes.startScene(OfficeScene.name);
-		});
-		PhysicsManager.instance.events.addEventListener('custom', ({ detail }) => {
-			console.log(detail.pairs[0]);
-			console.log('custom');
+			scenes.startScene(MainScene.name);
 		});
 	}
 
@@ -65,4 +61,4 @@ class MainScene extends Scene {
 	}
 }
 
-export default MainScene;
+export default OfficeScene;

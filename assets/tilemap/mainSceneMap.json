@@ -37,6 +37,11 @@
                  "name":"isStatic",
                  "type":"bool",
                  "value":true
+                }, 
+                {
+                 "name":"physics",
+                 "type":"bool",
+                 "value":true
                 }],
          "type":"tilelayer",
          "visible":true,
@@ -59,22 +64,49 @@
                  "width":95,
                  "x":897,
                  "y":320
-                }, 
-                {
-                 "height":64,
-                 "id":6,
-                 "name":"custom",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":64,
-                 "x":929,
-                 "y":448
                 }],
          "opacity":1,
          "properties":[
                 {
                  "name":"isSensor",
+                 "type":"bool",
+                 "value":true
+                }, 
+                {
+                 "name":"physics",
+                 "type":"bool",
+                 "value":true
+                }],
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":12,
+         "name":"invisibles",
+         "objects":[
+                {
+                 "height":28.5,
+                 "id":9,
+                 "name":"custom",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":30.5,
+                 "x":930.5,
+                 "y":449.5
+                }],
+         "opacity":1,
+         "properties":[
+                {
+                 "name":"isStatic",
+                 "type":"bool",
+                 "value":true
+                }, 
+                {
+                 "name":"physics",
                  "type":"bool",
                  "value":true
                 }],
@@ -118,8 +150,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":12,
- "nextobjectid":7,
+ "nextlayerid":13,
+ "nextobjectid":10,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",
